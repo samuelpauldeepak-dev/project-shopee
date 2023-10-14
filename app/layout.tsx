@@ -1,6 +1,7 @@
 import Head from "next/head";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Footer, Navbar } from "../components";
 export const metadata: Metadata = {
   title: "Project shopee",
   description:
@@ -109,7 +110,11 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
