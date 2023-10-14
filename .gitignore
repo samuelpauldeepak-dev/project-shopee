@@ -41,4 +41,5 @@ env
 *.tsbuildinfo
 next-env.d.ts
 .eslintrc.json
-
+yarn.lock
+package.lock.json
