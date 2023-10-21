@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Footer, Navbar } from "../components";
 export const metadata: Metadata = {
-  title: "Project shopee",
+  title: "Project Shopee",
   description:
     "Discover a world of limitless creativity and collaboration with our extraordinary software project sharing website. Our platform is a dynamic, full-stack solution that brings together front-end and back-end developers, mobile app creators, website designers, computer software experts, and more. Whether you're a solo developer or part of a multidisciplinary team, our flexible and innovative environment is tailored to empower your projects.",
   keywords:
