@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev ",
+    "dev": "next dev -p 8080 ",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -28,7 +28,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@grafbase/sdk": "^0.7.0",
+    "@grafbase/sdk": "^0.7.1",
     "daisyui": "^3.9.2"
   }
 }
