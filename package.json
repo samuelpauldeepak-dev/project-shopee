@@ -28,7 +28,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@grafbase/sdk": "^0.7.0",
+    "@grafbase/sdk": "^0.7.1",
     "daisyui": "^3.9.2"
   }
 }
