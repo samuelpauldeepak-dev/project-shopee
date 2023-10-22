@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8080 ",
+    "dev": "next dev  ",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -17,6 +17,7 @@
     "cloudinary": "^1.41.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "jsonwebtoken": "^9.0.2",
     "next": "13.4.19",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@grafbase/sdk": "^0.7.1",
+    "@types/jsonwebtoken": "^9.0.4",
     "daisyui": "^3.9.2"
   }
 }
