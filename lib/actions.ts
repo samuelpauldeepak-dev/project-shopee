@@ -13,6 +13,9 @@ const serverUrl = isProduction
   : "http://localhost:3000";
 
 const client = new GraphQLClient(apiUrl);
+const setHeader = () => {
+  client.setHeader("x-api-key", apiKey);
+};
 
 const makeGraphQLRequest = (query: string, variables = {}) => {
   try {
@@ -23,10 +26,12 @@ const makeGraphQLRequest = (query: string, variables = {}) => {
 };
 
 export const getUser = (email: string) => {
-  return makeGraphQLRequest(getUserQuery, {email});
+  setHeader();
+  return makeGraphQLRequest(getUserQuery, { email });
 };
 
 export const createUser = (name: string, email: string, avatarUrl: string) => {
+  setHeader();
   const variables = {
     input: {
       name,
@@ -34,5 +39,5 @@ export const createUser = (name: string, email: string, avatarUrl: string) => {
       avatarUrl,
     },
   };
-     return makeGraphQLRequest(createUserMutation, variables);
+  return makeGraphQLRequest(createUserMutation, variables);
 };
