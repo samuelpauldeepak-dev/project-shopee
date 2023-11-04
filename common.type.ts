@@ -45,6 +45,7 @@ export interface UserProfile {
 }
 
 export interface SessionInterface extends Session {
+  [x: string]: string | StaticImport;
   user: User & {
     id: string;
     name: string;
