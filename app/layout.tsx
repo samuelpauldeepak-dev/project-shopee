@@ -2,6 +2,7 @@ import Head from "next/head";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Footer, Navbar } from "../components";
+import SessionWrapper from "../components/SessionWrapper";
 export const metadata: Metadata = {
   title: "Project Shopee",
   description:
@@ -111,9 +112,11 @@ export default function RootLayout({
       </Head>
 
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SessionWrapper>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </SessionWrapper>
       </body>
     </html>
   );

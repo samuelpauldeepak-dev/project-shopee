@@ -20,6 +20,8 @@ module.exports = {
         "black-100": "#252525",
         "primary-purple": "#9747FF",
         "gray-50": "#D9D9D9",
+        "blue-accent": "#e6eafa",
+        "white-smoke": "#f5f5f5",
       },
       boxShadow: {
         menu: "0px 159px 95px rgba(13,12,34,0.01), 0px 71px 71px rgba(13,12,34,0.02), 0px 18px 39px rgba(13,12,34,0.02), 0px 0px 0px rgba(13,12,34,0.02)",
@@ -36,15 +38,15 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          // primary: "#4a5bf0",
-          // secondary: "#3949d4",
-          // accent: "#A7A8BB",
-          // neutral: "#F0F1F8",
-          // "base-100": "#ffffff",
-          // info: "#945EFF",
-          // success: "#4DAF2A",
-          // warning: "#F88C29",
-          // error: "#ed0000",
+          primary: "#4a5bf0",
+          secondary: "#3949d4",
+          accent: "#DADCE0",
+          neutral: "#F0F1F8",
+          "base-100": "#ffffff",
+          info: "#945EFF",
+          success: "#4DAF2A",
+          warning: "#F88C29",
+          error: "#ed0000",
         },
       },
     ],
