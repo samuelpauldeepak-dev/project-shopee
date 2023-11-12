@@ -50,7 +50,7 @@ const AuthProvider = () => {
 
   if (providers) {
     return (
-      <div className="w-full relative">
+      <div className="w-full relative" ref={modelRef}>
         <button
           className="btn btn-sm bg-blue-500 text-white rounded-md w-[6rem] h-[2.2rem] hover:bg-blue-500 hover:opacity-90"
           onClick={() => setIsLogin((prev) => !prev)}
@@ -59,9 +59,8 @@ const AuthProvider = () => {
         </button>
         {isLogin && (
           <div
-            className="bg-white border rounded-lg w-48 h-fit border-accent shadow-lg absolute 
+            className="bg-white border rounded-lg w-60 h-fit border-accent shadow-lg absolute 
             right-0 top-[3rem] flex flex-col justify-between"
-            ref={modelRef}
           >
             {Object.values(providers).map((provider: TProvider, i) => {
               return (
@@ -71,12 +70,8 @@ const AuthProvider = () => {
                     onClick={() => {
                       handleProviderClick(provider);
                     }}
-                    className={` border-accent min-h-12 flex items-center pl-4 font-medium text-sm cursor-pointer
-                 hover:text-blue-500 hover:bg-white-smoke  ${
-                   activeProvider === provider.id && isLoading
-                     ? `loading loading-spinner ml-20 text-blue-700 `
-                     : ""
-                 }`}
+                    className={` border-accent min-h-16 flex items-center pl-4 font-medium text-md cursor-pointer
+                 hover:text-secondary hover:bg-white-smoke  `}
                   >
                     {provider?.id === "google" ? (
                       <GoogleIcon className="w-[20px] h-[20px] mr-2" />
@@ -87,7 +82,15 @@ const AuthProvider = () => {
                     ) : (
                       ""
                     )}
-                    {provider?.name}
+                    <span
+                      className={`ml-2 select-none ${
+                        activeProvider === provider.id && isLoading
+                          ? `loading loading-spinner  text-blue-500 `
+                          : ""
+                      }`}
+                    >
+                      {provider?.name}
+                    </span>
                   </span>
                   <div className="h-[1px] w-full bg-accent " />
                 </>
@@ -95,8 +98,8 @@ const AuthProvider = () => {
             })}
 
             <span
-              className=" border-accent min-h-12 flex items-center pl-4 text-sm font-medium 
-            cursor-pointer hover:text-blue-500 hover:bg-white rounded-b-lg "
+              className=" border-accent min-h-12 flex items-center pl-4 text-md font-medium 
+            cursor-pointer hover:text-secondary hover:bg-white rounded-b-lg select-none"
             >
               Login with Email
             </span>

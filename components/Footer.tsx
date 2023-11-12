@@ -7,7 +7,7 @@ type TFooterColumn = {
   link: Array<string>;
 };
 const FooterColumn = ({ title, link }: TFooterColumn) => (
-  <div className="footer_column">
+  <div className="footer_column overflow-x-hidden">
     <h4 className="font-semibold">{title}</h4>
     <ul className="flex flex-col gap-2 font-normal ">
       {link.map((item) => (
@@ -33,14 +33,14 @@ const Footer = () => {
             />
             <p className="text-start text-sm font-normal mt-2 max-w-xs text-[#4D4C7D]">
               Project Shopee is the world's leading community for creatives to
-              share, grow, and get hired.
+              share, grow, and get skills.
             </p>
           </div>
-          <p className="text-gray mt-6 sm:mt-0 -mb-3 sm:mb-0">
+          {/* <p className="text-gray mt-6 sm:mt-0 -mb-3 sm:mb-0">
             {" "}
             <span className="text-black font-semibold mr-1">10,214</span>
             Project Submitted
-          </p>
+          </p> */}
         </div>
         <div className="flex flex-wrap gap-12">
           {footerLinks.map((footerLink, index) => (

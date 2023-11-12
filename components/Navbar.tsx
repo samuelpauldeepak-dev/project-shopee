@@ -3,14 +3,14 @@ import Link from "next/link";
 import { NavLinks } from "../constants";
 import AuthProvider from "./AuthProvider";
 import { getCurrentUser } from "../lib/session";
-import Logout from "./Logout";
 import { ProfileMenu } from ".";
 
 const Navbar = async () => {
   const session = await getCurrentUser();
+
   return (
-    <nav className="flexBetween navbar sticky top-0 bg-white">
-      <div className="flex-1 flexStart gap-10">
+    <nav className="flexBetween navbar sticky top-0 bg-white overflow-x-hidden">
+      <div className="flex-1 flexStart gap-10 -ml-6 md:ml-0">
         <Link href={"/"} className="flex justify-center items-center">
           <Image
             className=""
@@ -25,30 +25,22 @@ const Navbar = async () => {
             <Link
               key={link.key}
               href={link.href}
-              className="hover:text-[#8f5df5]"
+              className="hover:text-secondary"
             >
               {link.text}
             </Link>
           ))}
         </ul>
       </div>
-      <div className="flexCenter gap-4 relative">
+      <div className="flexCenter  relative">
         {session ? (
           <>
-            <Link href={"/"} className="btn btn-sm btn-primary">
+            <Link
+              href={"/create-project"}
+              className="btn btn-sm bg-blue-500 text-white rounded-md w-fit h-[2.5rem] hover:bg-blue-500 hover:opacity-90 mr-4"
+            >
               Share Work
             </Link>
-            {session?.user?.image && (
-              <Link href={`/profile/${session?.user?.id}`}>
-                <Image
-                  src={session.user.image}
-                  height={40}
-                  width={40}
-                  alt="User Image"
-                  className="rounded-full"
-                />
-              </Link>
-            )}
 
             <ProfileMenu user={session?.user} />
           </>
