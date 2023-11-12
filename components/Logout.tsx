@@ -6,7 +6,7 @@ const Logout = () => {
   return (
     <button
       onClick={() => signOut()}
-      className="btn btn-sm rounded-none btn-error"
+      className="btn  rounded-none bg-white rounded-b-md hover:text-secondary hover:bg-white-smoke"
     >
       Logout
     </button>

@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./screens/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -21,7 +22,7 @@ module.exports = {
         "primary-purple": "#9747FF",
         "gray-50": "#D9D9D9",
         "blue-accent": "#e6eafa",
-        "white-smoke": "#f5f5f5",
+        "white-smoke": "#fafafb",
       },
       boxShadow: {
         menu: "0px 159px 95px rgba(13,12,34,0.01), 0px 71px 71px rgba(13,12,34,0.02), 0px 18px 39px rgba(13,12,34,0.02), 0px 0px 0px rgba(13,12,34,0.02)",
@@ -39,7 +40,7 @@ module.exports = {
       {
         mytheme: {
           primary: "#4a5bf0",
-          secondary: "#3949d4",
+          secondary: "#8f5df5",
           accent: "#DADCE0",
           neutral: "#F0F1F8",
           "base-100": "#ffffff",
