@@ -3,6 +3,8 @@ import { getProviders, signIn, getSession } from "next-auth/react";
 import { useState, useEffect, useRef } from "react";
 import { GithubIcon, GoogleIcon, LinkedInIcon } from "../resources";
 import { RedirectableProviderType } from "next-auth/providers/index";
+import { motion } from "framer-motion";
+import { toast } from "sonner";
 type TProvider = {
   id: string;
   name: string;
@@ -43,6 +45,7 @@ const AuthProvider = () => {
     };
   }, []);
   const handleProviderClick = (provider: TProvider) => {
+    toast.info(`Logging in with ${provider?.id}`);
     setIsLoading(true);
     signIn<RedirectableProviderType | undefined>(provider?.id);
     setActiveProvider(provider?.id);
@@ -58,7 +61,10 @@ const AuthProvider = () => {
           Login
         </button>
         {isLogin && (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 10, y: 20 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
             className="bg-white border rounded-lg w-60 h-fit border-accent shadow-lg absolute 
             right-0 top-[3rem] flex flex-col justify-between"
           >
@@ -70,7 +76,7 @@ const AuthProvider = () => {
                     onClick={() => {
                       handleProviderClick(provider);
                     }}
-                    className={` border-accent min-h-16 flex items-center pl-4 font-medium text-md cursor-pointer
+                    className={` min-h-12 flex items-center pl-4 font-medium text-md cursor-pointer
                  hover:text-secondary hover:bg-white-smoke  `}
                   >
                     {provider?.id === "google" ? (
@@ -92,7 +98,7 @@ const AuthProvider = () => {
                       {provider?.name}
                     </span>
                   </span>
-                  <div className="h-[1px] w-full bg-accent " />
+                  {/* <div className="h-[1px] w-full bg-accent " /> */}
                 </>
               );
             })}
@@ -103,7 +109,7 @@ const AuthProvider = () => {
             >
               Login with Email
             </span>
-          </div>
+          </motion.div>
         )}
       </div>
     );

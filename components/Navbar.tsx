@@ -9,7 +9,7 @@ const Navbar = async () => {
   const session = await getCurrentUser();
 
   return (
-    <nav className="flexBetween navbar sticky top-0 bg-white overflow-x-hidden">
+    <nav className="flexBetween navbar sticky top-0 bg-white">
       <div className="flex-1 flexStart gap-10 -ml-6 md:ml-0">
         <Link href={"/"} className="flex justify-center items-center">
           <Image
@@ -37,7 +37,7 @@ const Navbar = async () => {
           <>
             <Link
               href={"/create-project"}
-              className="btn btn-sm bg-blue-500 text-white rounded-md w-fit h-[2.5rem] hover:bg-blue-500 hover:opacity-90 mr-4"
+              className=" text-blue-700  font-medium   mr-4"
             >
               Share Work
             </Link>

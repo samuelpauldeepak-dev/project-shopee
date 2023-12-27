@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Footer, Navbar } from "../components";
 import SessionWrapper from "../components/SessionWrapper";
+import { Toaster } from "sonner";
 export const metadata: Metadata = {
   title: "Project Shopee",
   description:
@@ -111,10 +112,12 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
-      <body>
+      <body className="hide-scrollbar">
+        <Toaster richColors />
         <SessionWrapper>
           <Navbar />
           <main>{children}</main>
+
           <Footer />
         </SessionWrapper>
       </body>
